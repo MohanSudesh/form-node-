@@ -1,0 +1,33 @@
+{
+  "name": "server",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build-server": "babel ./server --out-dir ./build --ignore server/node_modules/*",
+    "clean": "rm -rf build && mkdir build",
+    "build": "yarn clean && yarn build-server",
+    "dev": "nodemon --exec babel-node ./app.js",
+    "start": "node ./build/app.js"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^6.4.0",
+    "apollo-server": "^2.6.4",
+    "apollo-server-express": "^2.6.4",
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.19.0",
+    "core-js": "2.6.5",
+    "cors": "^2.8.5",
+    "express": "~4.16.1",
+    "graphql": "^14.3.1",
+    "graphql-import": "^0.7.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.6.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "nodemon": "^1.19.1"
+  }
+}
